@@ -1,0 +1,97 @@
+html, body {
+	font-family: Nunito, sans-serif;
+}
+
+.header, .table {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.poker {
+	box-sizing: border-box;
+	flex: 0 1 7%;
+	height: 8vw;
+	margin: 2px;
+	border: 2px solid #e0e0e0;
+}
+
+/* Card State */
+.covered {
+	background: url('https://i.imgur.com/6Ild3Cj.jpg');
+	background-size: cover;
+}
+
+.covered:hover {
+	cursor: pointer;
+}
+
+.paired {
+  background-color: #dae0e3;
+}
+
+.wrong {
+  animation-name: wrongAnimation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5;
+}
+@keyframes wrongAnimation {
+  to {
+    border: 2px solid #fa1a06;
+  }
+}
+
+.right {
+  animation-name: rightAnimation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5;
+}
+@keyframes rightAnimation {
+  to {
+    border: 2px solid #26aD4a;
+  }
+}
+
+/* Game Finish */
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+
+.completed > p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+
+.completed > p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
+
+/* Auto Playing */
+#auto-play {
+	border: 0;
+}
+
+.activated {
+  animation-name: runningAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes runningAnimation {
+  0% {
+    background: #d93654;
+  }
+	50% {
+    background: #ff8097;
+  }
+	100% {
+    background: #d93654;
+  }
+}
